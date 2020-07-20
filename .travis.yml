@@ -1,24 +1,13 @@
-# Based on: https://medium.com/faun/configuring-travis-ci-for-angular-application-34afee1715f
 dist: trusty
 sudo: false
-
 language: node_js
 node_js:
   - '10'
 
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
-cache:
-  directories:
-    - ./node_modules
-
-install:
-  - npm install
+cache: npm
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
