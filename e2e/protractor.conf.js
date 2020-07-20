@@ -10,7 +10,7 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
-    //args: [ "--headless", "--disable-gpu", "--window-size=800x600"]
+    args: [ "--headless", "--disable-gpu", "--window-size=800x600"],
     flags: ["--no-sandbox"]
   },
   directConnect: true,
