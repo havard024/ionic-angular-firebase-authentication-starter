@@ -10,6 +10,9 @@ describe('new App', () => {
 
   it('should redirect to login when not authorized', async () => {
     page.navigateTo();
+    console.log(await browser.getCurrentUrl())
+    page.waitForRedirect('/login')
+    console.log(await browser.getCurrentUrl())
     expect(browser.getCurrentUrl()).toContain('/login');
   });
 });
