@@ -9,9 +9,16 @@ describe('new App', () => {
   });
 
   it('should be blank', async () => {
-    browser.waitForAngularEnabled(false); // this allows the test the continue far enough to print out the page source
-    await page.navigateTo();
-    console.log(browser.getPageSource())
-    expect(page.getParagraphText()).toContain('The world is your oyster.');
+    // browser.waitForAngularEnabled(false); // this allows the test the continue far enough to print out the page source
+    try {
+      console.log(page)
+      page.navigateTo();
+      page.waitForRedirect('/login')
+      console.log('hei heii hi')
+      console.log(browser.getPageSource())
+      expect(page.getParagraphText()).toContain('The world is your oyster.');
+    } catch {
+      console.log(browser.getPageSource())
+    }
   });
 });
