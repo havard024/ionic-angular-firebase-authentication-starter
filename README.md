@@ -1,8 +1,4 @@
-# Build status
-
 [![Build Status](https://travis-ci.org/havard024/ionic-angular-firebase-authentication-starter.svg?branch=master)](https://travis-ci.org/havard024/ionic-angular-firebase-authentication-starter)
-
-[![Build Status](https://travis-ci.org/havard024/ionic-angular-firebase-authentication-starter.svg?branch=travis)](https://travis-ci.org/havard024/ionic-angular-firebase-authentication-starter)
 
 # Ionic and Firebase Authentication Starter
 
