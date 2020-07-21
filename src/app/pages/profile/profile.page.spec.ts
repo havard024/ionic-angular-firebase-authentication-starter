@@ -2,6 +2,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilePage } from './profile.page';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ProfilePage', () => {
   let component: ProfilePage;
@@ -11,6 +14,10 @@ describe('ProfilePage', () => {
     TestBed.configureTestingModule({
       declarations: [ ProfilePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        RouterTestingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+      ]
     })
     .compileComponents();
   }));

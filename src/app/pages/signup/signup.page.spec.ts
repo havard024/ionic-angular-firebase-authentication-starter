@@ -2,6 +2,10 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupPage } from './signup.page';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('SignupPage', () => {
   let component: SignupPage;
@@ -11,6 +15,10 @@ describe('SignupPage', () => {
     TestBed.configureTestingModule({
       declarations: [ SignupPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        RouterTestingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+      ],
     })
     .compileComponents();
   }));
