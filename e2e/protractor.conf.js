@@ -3,6 +3,8 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
+process.env.CHROME_BIN = process.env.CHROME_BIN || require('puppeteer').executablePath();
+
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
@@ -10,6 +12,9 @@ exports.config = {
   ],
   capabilities: {
     'browserName': 'chrome',
+    chromeOptions:{
+      binary: process.env.CHROME_BIN
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
